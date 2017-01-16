@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PCLBlurEffectAlert
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func callAlert(_ sender: Any) {
+        
+        let alert = PCLBlurEffectAlert.Controller(title: "Title", message: "Message", effect: UIBlurEffect(style: .light), style: .alert)
+        let alertButton = PCLBlurEffectAlert.AlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(alertButton)
+        
+        alert.show()
+        
+    }
 
 }
 
